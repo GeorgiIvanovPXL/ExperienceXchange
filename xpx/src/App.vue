@@ -8,21 +8,4 @@ import { RouterLink, RouterView } from 'vue-router'
   </div>
 </template>
 
-<style scoped>
-.main_login {
-  width: 100%;
-  position: sticky;
-  top: calc(100%);
-  left: 0;
-  padding: 24px;
-  align-items: center;
-  justify-content: space-between;
-}
-nav {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
-}
-</style>
+<style scoped></style>
