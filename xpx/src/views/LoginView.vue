@@ -3,24 +3,15 @@ import { RouterLink, RouterView } from 'vue-router'
 </script>
 
 <template>
-  <div class="nav">
-    <nav>
-      <div>
-        <RouterLink to="/main/navigator">Navigatie</RouterLink>
-      </div>
-      <div>
-        <RouterLink to="/main/speeddating">Speeddating</RouterLink>
-      </div>
-      <div>
-        <RouterLink to="/main/ar">A-Reality</RouterLink>
-      </div>
-    </nav>
+  <div class="main_login">
+    <div>
+      <a href="/main">Aanmelden</a>
+    </div>
   </div>
-  <RouterView />
 </template>
 
 <style scoped>
-.nav {
+.main_login {
   width: 100%;
   position: sticky;
   top: calc(100%);
