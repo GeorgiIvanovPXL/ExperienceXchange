@@ -1,6 +1,8 @@
 <template>
   <div class="main">
-    <h1>{{ name }} is in the Ar View.</h1>
+    <h1>Transformeer <br />jezelf naar een echte les</h1>
+
+    <a href="/main/ar-nav">Ga naar AR...</a>
   </div>
 </template>
 

@@ -1,6 +1,9 @@
 <template>
   <div class="main">
-    <h1>Navigatie</h1>
+    <a href="/main/ar">Terug naar het overzicht...</a>
+    <br />
+    <br />
+    <p>Interaction design is niet beschikbaar...</p>
   </div>
 </template>
 
@@ -10,9 +13,6 @@ export default {
     return {
       name: 'Peter'
     }
-  },
-  mounted() {
-    console.log(this.$route) // Access the $route object in the mounted hook or other component methods
   }
 }
 </script>
