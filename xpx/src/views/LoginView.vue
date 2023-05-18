@@ -55,7 +55,6 @@ const handleSubmit = (event: Event) => {
   justify-content: flex-start;
 }
 .main_wrapper {
-  max-width: 500px;
   display: flex;
   flex-direction: column;
   gap: 32px;

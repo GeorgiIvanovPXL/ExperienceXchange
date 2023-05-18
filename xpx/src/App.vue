@@ -10,6 +10,12 @@ import { RouterLink, RouterView } from 'vue-router'
 
 <style scoped>
 #app {
+  /* display: flex; */
+  width: 100%;
+  /* flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start; */
+  min-height: 100dvh;
   background-color: #232323;
 }
 </style>

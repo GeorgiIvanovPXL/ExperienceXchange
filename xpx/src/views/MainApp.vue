@@ -36,22 +36,21 @@ const isActive = (routePath: string) => {
 }
 
 const getIconColor = (routePath: string) => {
-  return isActive(routePath) ? 'yellowgreen' : 'white'
+  return isActive(routePath) ? '#D1FF31' : 'white'
 }
 </script>
 
 <style scoped>
 .nav_wrapper {
-  border-top: 1px solid yellowgreen;
+  border-top: 1.5px solid white;
   background-color: #232323;
-
   border-radius: 8px 8px 0px 0px;
   width: 100%;
-  position: sticky;
-  top: calc(100%);
+  position: fixed;
+  bottom: 0;
   left: 0;
-  padding: 24px;
-
+  padding: 10px 16px 10px 16px;
+  z-index: 1000;
   align-items: center;
   justify-content: space-between;
 }
@@ -81,9 +80,9 @@ nav {
   padding: 0;
 }
 .active {
-  color: yellowgreen;
+  color: #d1ff31;
 }
 .active a {
-  color: yellowgreen;
+  color: #d1ff31;
 }
 </style>

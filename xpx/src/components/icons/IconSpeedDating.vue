@@ -22,7 +22,7 @@
 
 <script setup lang="ts">
 // Props declaration
-const props = defineProps({
+defineProps({
   size: {
     type: [Number, String], // Accepts a number or a string value
     default: 18 // Default size if not provided
