@@ -24,7 +24,7 @@
           <p>{{ 'TODO: Google icon' }}</p>
           <p>Aanmelden met google.</p>
         </div>
-        <div>
+        <div class="alt_login_item">
           <p>Ga verder als gast</p>
         </div>
       </div>
@@ -38,7 +38,7 @@ const router = useRouter()
 
 const handleSubmit = (event: Event) => {
   event.preventDefault() // Prevent default form submission
-  router.push('/main') // Navigate to the Dashboard route
+  router.push('/main/navigator') // Navigate to the Dashboard route
 }
 </script>
 
@@ -55,7 +55,6 @@ const handleSubmit = (event: Event) => {
   justify-content: flex-start;
 }
 .main_wrapper {
-  max-width: 500px;
   display: flex;
   flex-direction: column;
   gap: 32px;

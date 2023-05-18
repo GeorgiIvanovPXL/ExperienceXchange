@@ -1,8 +1,9 @@
 <template>
   <div class="main">
-    <h1>Transformeer <br />jezelf naar een echte les</h1>
-
-    <a href="/main/ar-nav">Ga naar AR...</a>
+    <a href="/main/ar">Terug naar het overzicht...</a>
+    <br />
+    <br />
+    <p>Interaction design is niet beschikbaar...</p>
   </div>
 </template>
 

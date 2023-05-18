@@ -3,6 +3,7 @@ import LoginView from '../views/LoginView.vue'
 import ArView from '../views/ArView.vue'
 import NavigatorView from '@/views/NavigatorView.vue'
 import MainApp from '../views/MainApp.vue'
+import ArNav from '../views/ArNav.vue'
 import SpeedDatingVue from '../views/SpeedDating.vue'
 
 const router = createRouter({
@@ -21,6 +22,11 @@ const router = createRouter({
           path: 'navigator',
           name: 'navigator',
           component: NavigatorView
+        },
+        {
+          path: 'ar-nav',
+          name: 'ar-nav',
+          component: ArNav
         },
         {
           path: 'speeddating',
