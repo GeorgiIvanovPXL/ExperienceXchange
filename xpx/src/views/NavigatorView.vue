@@ -90,6 +90,9 @@ export default {
   align-items: center;
   padding-top: 16px;
   padding-bottom: 160px;
+  min-height: 100dvh;
+  min-height: 100%;
+  min-height: 100vh;
 }
 .absolute_icon {
   position: absolute;

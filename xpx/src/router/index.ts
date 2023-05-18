@@ -3,6 +3,7 @@ import LoginView from '../views/LoginView.vue'
 import ArView from '../views/ArView.vue'
 import NavigatorView from '@/views/NavigatorView.vue'
 import MainApp from '../views/MainApp.vue'
+import OnboardingView from '@/views/OnboardingView.vue'
 import ArNav from '../views/ArNav.vue'
 import SpeedDatingVue from '../views/SpeedDating.vue'
 
@@ -11,6 +12,12 @@ const router = createRouter({
   routes: [
     {
       path: '/',
+      name: 'ob',
+      component: OnboardingView
+    },
+
+    {
+      path: '/login',
       name: 'login',
       component: LoginView
     },
