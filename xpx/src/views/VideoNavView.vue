@@ -4,70 +4,77 @@
       <p>Navigating to Digital Village</p>
       <div id="nav_circle"></div>
     </div>
-    <div class="video-container">
-      <video id="video" ref="video" :src="videoSource" @ended="videoEnded" type="video/mp4"></video>
-    </div>
+    <LoadingOverlay v-if="loaded" />
+    <video id="video" ref="video" :src="videoSource" @ended="videoEnded" type="video/mp4"></video>
   </div>
 </template>
 
 <script lang="ts">
+import LoadingOverlay from '@/components/LoadingOverlay.vue'
+
 export default {
   data() {
     return {
       videoSource: '/src/assets/videos/demo_9x16.mp4',
-      isPlaying: false
+      loaded: false,
+      loadingVideo: false
     }
   },
   mounted() {
-    this.loadVideo()
+    setTimeout(() => {
+      this.loadVideo()
+    }, 2000)
+
     // const video = document.getElementById('video')
     // video?.addEventListener('ended', this.videoEnded)
   },
   methods: {
     loadVideo() {
-      const video = document.getElementById('video')
-      video?.play()
+      this.loaded = true
+      setTimeout(() => {
+        const video = document.getElementById('video')
+        video?.play()
+      }, 200)
     },
     videoEnded() {
       alert('Hoera, je bent er!')
       this.$router.push('/main/arrived')
     }
-  }
+  },
+
+  components: { LoadingOverlay }
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .main {
+  height: 100vh;
   color: white;
+  background: #232323;
   position: relative;
   width: 100%;
-  gap: 32px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  padding-top: 48px;
-  min-height: 100dvh;
-  min-height: 100%;
-  min-height: 100vh;
+  align-items: center;
 }
 .header {
-  position: fixed;
-  top: 0;
-  left: 0;
+  // position: fixed;
+  // top: 0;
+  // left: 0;
   padding: 24px;
+  min-height: 72px;
   background: #232323;
   display: flex;
   width: 100%;
-
   align-items: center;
   gap: 16px;
   justify-content: center;
 }
 
 .header #nav_circle {
-  width: 17.5px;
+  width: 16px;
   position: relative;
-  height: 17.5px;
+  height: 16px;
   background: #d1ff31;
   border-radius: 50%;
 }
@@ -78,31 +85,39 @@ export default {
   background: #d1ff31;
   opacity: 0.5;
   width: 30px;
-  animation: pulsing_anim 3s ease infinite;
+  animation: pulsing_anim 2s cubic-bezier(0.39, 0.575, 0.565, 1) infinite;
   height: 30px;
   border-radius: 50%;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
 }
-
 #video {
-  width: 100%;
-  height: 100%;
+  background-color: #232323;
+  width: auto;
+  height: calc(100vh - 72px);
+  min-height: calc(100dvh - 72px);
+  min-height: calc(100vh - 72px);
 }
 
 @keyframes pulsing_anim {
   0% {
-    width: 30px;
-    height: 30px;
+    opacity: 0;
+    width: 32px;
+    height: 32px;
+  }
+  25% {
+    opacity: 0;
+    width: 8px;
+    height: 8px;
   }
   50% {
-    width: 10px;
-    height: 10px;
+    opacity: 0.64;
   }
   100% {
-    width: 30px;
-    height: 30px;
+    opacity: 0;
+    width: 32px;
+    height: 32px;
   }
 }
 </style>

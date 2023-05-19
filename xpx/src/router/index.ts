@@ -26,6 +26,11 @@ const router = createRouter({
       component: LoginView
     },
     {
+      path: '/video-nav',
+      name: 'video-nav',
+      component: VideoNav
+    },
+    {
       path: '/main',
       component: MainApp,
       children: [
@@ -39,11 +44,7 @@ const router = createRouter({
           name: 'ar-nav',
           component: ArNav
         },
-        {
-          path: 'video-nav',
-          name: 'video-nav',
-          component: VideoNav
-        },
+
         {
           path: 'arrived',
           name: 'arrived',

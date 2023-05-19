@@ -12,9 +12,7 @@ import IconChevronLeft from '@/components/icons/IconChevronLeft.vue'
 
       <h3>Open de navigatie en volg de <span>gele lijn.</span></h3>
 
-      <div class="btn_yellow">
-        <a href="/main/video-nav">Open navigatie</a>
-      </div>
+      <div @click="redirect" class="btn_yellow">Open navigatie</div>
     </div>
   </div>
 </template>
@@ -24,6 +22,13 @@ export default {
   data() {
     return {
       name: 'Peter'
+    }
+  },
+  methods: {
+    redirect() {
+      setTimeout(() => {
+        this.$router.push('/video-nav')
+      }, 300)
     }
   }
 }
@@ -82,13 +87,23 @@ export default {
   width: 100%;
   background: #d1ff31;
   display: flex;
+  transition: 0.3s ease-out;
   border-radius: 8px;
-  a {
-    width: 100%;
-    font-weight: 600;
-    font-size: 24px;
-    background: transparent;
-    text-align: center;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+  font-weight: 600;
+  color: #232323;
+  padding: 8px;
+  font-size: 24px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  &:active {
+    background: #d2ff31d5;
+    transition: 0.3s ease-out;
+    transform: scale(0.8);
   }
 }
 </style>

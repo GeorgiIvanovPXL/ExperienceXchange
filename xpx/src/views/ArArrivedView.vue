@@ -30,9 +30,7 @@ import IconDigital from '@/components/icons/IconDigital.vue'
         </div>
       </div>
 
-      <div class="btn_yellow">
-        <a href="/main/pre-demo">Start demo</a>
-      </div>
+      <div @click="redirect" class="btn_yellow">Start demo</div>
     </div>
   </div>
 </template>
@@ -43,11 +41,17 @@ export default {
     return {}
   },
   mounted() {},
-  methods: {}
+  methods: {
+    redirect() {
+      setTimeout(() => {
+        this.$router.push('/main/pre-demo')
+      }, 300)
+    }
+  }
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .main {
   color: white;
   position: relative;
@@ -133,12 +137,20 @@ export default {
   background: #d1ff31;
   border-radius: 8px;
   display: flex;
-}
-.btn_yellow a {
-  width: 100%;
   font-weight: 600;
+  transition: 0.3s ease-out;
   font-size: 24px;
-  background: transparent;
-  text-align: center;
+  color: #232323;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+
+  &:active {
+    transition: 0.3s ease-out;
+    transform: scale(0.8);
+  }
 }
 </style>
