@@ -85,16 +85,21 @@
   </svg>
 </template>
 
-<script setup lang="ts">
-// Props declaration
-defineProps({
-  width: {
-    type: [Number, String], // Accepts a number or a string value
-    default: 100 // Default size if not provided
+<script lang="ts">
+export default {
+  props: {
+    width: {
+      type: [Number, String], // Accepts a number or a string value
+      default: 100 // Default size if not provided
+    },
+    height: {
+      type: [Number, String], // Accepts a number or a string value
+      default: 192 // Default size if not provided
+    }
   },
-  height: {
-    type: [Number, String], // Accepts a number or a string value
-    default: 192 // Default size if not provided
+  data() {
+    return {}
   }
-})
+}
+// Props declaration
 </script>

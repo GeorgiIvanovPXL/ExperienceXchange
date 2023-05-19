@@ -10,9 +10,10 @@
 </template>
 
 <script lang="ts">
-import LoadingOverlay from '@/components/LoadingOverlay.vue'
+import LoadingOverlay from '../components/LoadingOverlay.vue'
 
 export default {
+  components: { LoadingOverlay },
   data() {
     return {
       videoSource: '/src/assets/videos/demo_9x16.mp4',
@@ -41,9 +42,7 @@ export default {
       // alert('Hoera, je bent er!')
       this.$router.push('/main/arrived')
     }
-  },
-
-  components: { LoadingOverlay }
+  }
 }
 </script>
 

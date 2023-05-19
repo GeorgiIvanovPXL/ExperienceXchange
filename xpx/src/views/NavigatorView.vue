@@ -1,12 +1,3 @@
-<script setup lang="ts">
-import IconSearch from '@/components/icons/IconSearch.vue'
-import IconProfile from '@/components/icons/IconProfile.vue'
-import IconBusiness from '@/components/icons/IconBusiness.vue'
-import BgArt from '@/components/BgArt.vue'
-import IconDigital from '@/components/icons/IconDigital.vue'
-import IconHealthcare from '@/components/icons/IconHealthcare.vue'
-import IconMusic from '@/components/icons/IconMusic.vue'
-</script>
 <template>
   <div class="main">
     <div class="flex-c-heading">
@@ -58,7 +49,9 @@ import IconMusic from '@/components/icons/IconMusic.vue'
             <p>Toegepaste psychologie.</p>
           </div>
         </div>
-        <div class="popular_item"></div>
+        <div class="popular_item">
+          <p>Digitale Vormgeving</p>
+        </div>
         <div class="popular_item"></div>
       </div>
     </div>
@@ -66,7 +59,23 @@ import IconMusic from '@/components/icons/IconMusic.vue'
 </template>
 
 <script lang="ts">
+import IconSearch from '../components/icons/IconSearch.vue'
+import IconProfile from '../components/icons/IconProfile.vue'
+import IconBusiness from '../components/icons/IconBusiness.vue'
+import BgArt from '../components/BgArt.vue'
+import IconDigital from '../components/icons/IconDigital.vue'
+import IconHealthcare from '../components/icons/IconHealthcare.vue'
+import IconMusic from '../components/icons/IconMusic.vue'
 export default {
+  components: {
+    IconSearch,
+    IconProfile,
+    IconBusiness,
+    BgArt,
+    IconDigital,
+    IconHealthcare,
+    IconMusic
+  },
   data() {
     return {
       name: 'Peter'
@@ -74,8 +83,7 @@ export default {
   },
   mounted() {
     console.log(this.$route) // Access the $route object in the mounted hook or other component methods
-  },
-  components: { IconDigital, IconHealthcare, IconMusic }
+  }
 }
 </script>
 

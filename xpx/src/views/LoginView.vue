@@ -33,18 +33,28 @@
     </div>
   </div>
 </template>
-<script setup lang="ts">
-import { RouterLink, RouterView, useRouter } from 'vue-router'
+<script lang="ts">
 import BgArtOnboarding from '../components/BgArtOnboarding.vue'
 import IconGoogle from '../components/icons/IconGoogle.vue'
 
-const router = useRouter()
-
-const handleSubmit = (event: Event) => {
-  event.preventDefault() // Prevent default form submission
-  setTimeout(() => {
-    router.push('/main/navigator') // Navigate to the Dashboard route
-  }, 200)
+export default {
+  components: {
+    BgArtOnboarding,
+    IconGoogle
+  },
+  data() {
+    return {
+      name: 'Peter'
+    }
+  },
+  methods: {
+    handleSubmit(event: Event) {
+      event.preventDefault() // Prevent default form submission
+      setTimeout(() => {
+        this.$router.push('/main/navigator') // Navigate to the Dashboard route
+      }, 300)
+    }
+  }
 }
 </script>
 

@@ -1,6 +1,3 @@
-<script setup lang="ts">
-import IconChevronLeft from '@/components/icons/IconChevronLeft.vue'
-</script>
 <template>
   <div class="main">
     <div class="btn_tertiary">
@@ -18,7 +15,11 @@ import IconChevronLeft from '@/components/icons/IconChevronLeft.vue'
 </template>
 
 <script lang="ts">
+import IconChevronLeft from '../components/icons/IconChevronLeft.vue'
 export default {
+  components: {
+    IconChevronLeft
+  },
   data() {
     return {
       name: 'Peter'
@@ -99,7 +100,9 @@ export default {
   align-items: center;
   justify-content: center;
   text-align: center;
-
+  &:hover {
+    cursor: pointer;
+  }
   &:active {
     background: #d2ff31d5;
     transition: 0.3s ease-out;
