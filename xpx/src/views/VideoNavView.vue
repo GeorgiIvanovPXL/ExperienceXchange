@@ -4,7 +4,7 @@
       <p>Navigating to Digital Village</p>
       <div id="nav_circle"></div>
     </div>
-    <LoadingOverlay v-if="loaded" />
+    <LoadingOverlay v-if="!loaded" />
     <video id="video" ref="video" :src="videoSource" @ended="videoEnded" type="video/mp4"></video>
   </div>
 </template>
@@ -33,11 +33,12 @@ export default {
       this.loaded = true
       setTimeout(() => {
         const video = document.getElementById('video')
+        video?.classList.add('show')
         video?.play()
       }, 200)
     },
     videoEnded() {
-      alert('Hoera, je bent er!')
+      // alert('Hoera, je bent er!')
       this.$router.push('/main/arrived')
     }
   },
@@ -56,6 +57,10 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+.show {
+  animation: opa 0.3s ease-out forwards;
+  -webkit-animation: opa 0.3s ease-out forwards;
 }
 .header {
   // position: fixed;
@@ -95,6 +100,7 @@ export default {
 #video {
   background-color: #232323;
   width: auto;
+  opacity: 0;
   height: calc(100vh - 72px);
   min-height: calc(100dvh - 72px);
   min-height: calc(100vh - 72px);
@@ -118,6 +124,15 @@ export default {
     opacity: 0;
     width: 32px;
     height: 32px;
+  }
+}
+
+@keyframes opa {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 </style>
