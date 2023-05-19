@@ -10,7 +10,8 @@
       </div>
       <p class="para">Ontdek de vernieuwde PXL-info experience.</p>
       <div class="btn_tertiary">
-        <a href="/login">Ga verder</a> <IconChevronRight size="32" color="#d1ff31" />
+        <a href="/login">Ga verder</a>
+        <div id="icon"><IconChevronRight size="32" color="#d1ff31" /></div>
       </div>
     </div>
   </div>
@@ -30,7 +31,7 @@ const handleSubmit = (event: Event) => {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .main_ob {
   color: white;
   width: 100%;
@@ -45,14 +46,14 @@ const handleSubmit = (event: Event) => {
   z-index: 10;
   align-items: center;
   justify-content: center;
+  .absolute_art_f {
+    position: absolute;
+    top: 16px;
+    z-index: -1;
+    right: 16px;
+  }
 }
 
-.absolute_art_f {
-  position: absolute;
-  top: 16px;
-  z-index: -1;
-  right: 16px;
-}
 .main_wrapper {
   display: flex;
   flex-direction: column;
@@ -82,16 +83,36 @@ const handleSubmit = (event: Event) => {
   font-size: 20px;
 }
 .btn_tertiary {
+  width: fit-content;
   display: flex;
   align-items: center;
+  position: relative;
+  #icon {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  a {
+    background: transparent;
+    color: #d1ff31;
+
+    margin: 0;
+    padding: 0;
+    z-index: 0;
+    font-size: 24px;
+  }
 }
-.btn_tertiary a {
-  background: transparent;
-  color: #d1ff31;
-  margin: 0;
-  padding: 0;
-  text-decoration: underline;
-  text-underline-offset: 4px;
-  font-size: 24px;
+
+.btn_tertiary:active,
+.btn_tertiary:hover {
+  cursor: pointer;
+  #icon {
+    transition: 0.4s ease-out;
+    transform: (translateX(10px));
+  }
 }
 </style>
+
+<style scoped></style>

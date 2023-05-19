@@ -21,7 +21,11 @@
       </div>
     </nav>
   </div>
-  <RouterView />
+  <RouterView v-slot="{ Component }">
+    <transition name="route" mode="out-in">
+      <component :is="Component"></component>
+    </transition>
+  </RouterView>
 </template>
 
 <script setup lang="ts">
@@ -84,5 +88,20 @@ nav {
 }
 .active a {
   color: #d1ff31;
+}
+
+.route-enter-from {
+  opacity: 0;
+  transform: translateY(100px);
+}
+.route-enter-active {
+  transition: all 0.3s ease-out;
+}
+.router-leave-to {
+  opacity: 0;
+  transform: translateY(-100px);
+}
+.route-leave-active {
+  transition: all 0.3s ease-out;
 }
 </style>

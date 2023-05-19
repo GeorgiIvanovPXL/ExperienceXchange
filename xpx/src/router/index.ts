@@ -4,8 +4,12 @@ import ArView from '../views/ArView.vue'
 import NavigatorView from '@/views/NavigatorView.vue'
 import MainApp from '../views/MainApp.vue'
 import OnboardingView from '@/views/OnboardingView.vue'
-import ArNav from '../views/ArNav.vue'
+import ArNav from '../views/ArNavView.vue'
+import VideoNav from '../views/VideoNavView.vue'
 import SpeedDatingVue from '../views/SpeedDating.vue'
+import PreDemo from '@/views/PreDemoView.vue'
+import Demo from '@/views/DemoView.vue'
+import ArArrived from '../views/ArArrivedView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -34,6 +38,26 @@ const router = createRouter({
           path: 'ar-nav',
           name: 'ar-nav',
           component: ArNav
+        },
+        {
+          path: 'video-nav',
+          name: 'video-nav',
+          component: VideoNav
+        },
+        {
+          path: 'arrived',
+          name: 'arrived',
+          component: ArArrived
+        },
+        {
+          path: 'pre-demo',
+          name: 'pre-demo',
+          component: PreDemo
+        },
+        {
+          path: 'demo',
+          name: 'demo',
+          component: Demo
         },
         {
           path: 'speeddating',

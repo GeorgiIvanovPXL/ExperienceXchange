@@ -1,8 +1,41 @@
+<script setup lang="ts">
+import IconBusiness from '@/components/icons/IconBusiness.vue'
+import IconDigital from '@/components/icons/IconDigital.vue'
+import IconHealthcare from '@/components/icons/IconHealthcare.vue'
+import IconMusic from '@/components/icons/IconMusic.vue'
+import IconSearch from '@/components/icons/IconSearch.vue'
+</script>
 <template>
   <div class="main">
-    <h1>Transformeer <br />jezelf naar een echte les</h1>
+    <div class="main_heading">
+      <h1>Transporteer jezelf naar een echte les</h1>
+    </div>
 
-    <a href="/main/ar-nav">Ga naar AR...</a>
+    <div class="categories">
+      <h2>Kies een departement</h2>
+      <div class="categories_container">
+        <div class="category_item">
+          <IconBusiness size="24" color="#d1ff31" />
+          <div class="category_name"><a href="/main/ar-nav"> Business</a></div>
+        </div>
+        <div class="category_item">
+          <IconDigital size="24" color="#d1ff31" />
+          <div class="category_name"><a href="/main/ar-nav">Digital</a></div>
+        </div>
+        <div class="category_item">
+          <IconHealthcare size="24" color="#d1ff31" />
+          <div class="category_name"><a href="/main/ar-nav">Healthcare</a></div>
+        </div>
+        <div class="category_item">
+          <IconMusic size="24" color="#d1ff31" />
+          <div class="category_name"><a href="/main/ar-nav">Music</a></div>
+        </div>
+        <div class="category_item">
+          <IconSearch size="24" color="#d1ff31" />
+          <div class="category_name"><a href="/main/ar-nav">Sports</a></div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -25,10 +58,85 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 16px;
+  padding-top: 48px;
   padding-bottom: 160px;
   min-height: 100dvh;
   min-height: 100%;
   min-height: 100vh;
+}
+.main_heading {
+  width: 100%;
+  padding-left: 24px;
+}
+.main_heading h1 {
+  font-size: 40px;
+  line-height: 49px;
+  font-weight: 500;
+}
+
+.categories {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.categories_container {
+  padding: 0px 24px 0px 24px;
+  display: flex;
+  overflow: scroll;
+  flex-wrap: wrap;
+  min-width: 100%;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  width: 100%;
+}
+.categories h2 {
+  font-weight: 400;
+  padding: 0px 24px 0px 24px;
+}
+
+.categories_container::-webkit-scrollbar {
+  display: none;
+}
+.categories_container {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.categories .category_item {
+  background: #353535;
+  padding-top: 24px;
+  border-radius: 6px;
+  /* max-width: 100px; */
+  min-width: 92px;
+  min-height: 100px;
+  gap: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.categories .category_name {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background: #ffffff;
+  border-radius: 0px 0px 6px 6px;
+}
+
+.categories .category_name a {
+  margin: 0;
+  width: 100%;
+  padding: 0;
+  text-align: center;
+  background: transparent;
+  color: #232323;
+  font-weight: 500;
+  line-height: 24px;
+  font-size: 15px;
 }
 </style>

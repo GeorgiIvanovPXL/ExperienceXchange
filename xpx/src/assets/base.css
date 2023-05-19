@@ -7,15 +7,25 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'heming', sans-serif;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 body,
 html {
   min-height: 100dvh;
-
+  min-height: 100vh;
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
   line-height: 1.6;
   font-family: heming, sans-serif;
   font-size: 15px;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+a:focus,
+a::selection,
+a:visited,
+a:active {
+  outline: none;
 }

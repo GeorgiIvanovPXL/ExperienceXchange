@@ -42,11 +42,13 @@ const router = useRouter()
 
 const handleSubmit = (event: Event) => {
   event.preventDefault() // Prevent default form submission
-  router.push('/main/navigator') // Navigate to the Dashboard route
+  setTimeout(() => {
+    router.push('/main/navigator') // Navigate to the Dashboard route
+  }, 200)
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .main_login {
   width: 100%;
   min-height: 100dvh;
@@ -128,23 +130,32 @@ const handleSubmit = (event: Event) => {
   padding: 10px 16px;
   border-radius: 4px;
   font-size: 16px;
-}
 
-.login_form .form_control input:focus {
-  outline: 1.5px solid #cccccc;
+  &:focus {
+    transition: 0.4s ease-out;
+    outline: 2px solid #cccccc;
+  }
 }
 
 .login_form .btn_login {
+  transition: 0.3s ease-out;
   background-color: white;
   border: 0px solid transparent;
   border-radius: 4px;
   padding: 10px;
   font-size: 20px;
   font-weight: 550;
+  &:hover {
+    cursor: pointer;
+    transition: 0.4s ease-out;
+    background-color: #e9e9e9;
+  }
+  &:active {
+    transition: 0.3s ease-out;
+    transform: scale(0.9);
+  }
 }
-.login_form .btn_login:hover {
-  cursor: pointer;
-}
+
 .alt_logins {
   color: white;
   display: flex;
