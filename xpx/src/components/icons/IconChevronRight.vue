@@ -13,16 +13,18 @@
   </svg>
 </template>
 
-<script setup lang="ts">
-// Props declaration
-defineProps({
-  size: {
-    type: [Number, String], // Accepts a number or a string value
-    default: 18 // Default size if not provided
-  },
-  color: {
-    type: String, // Accepts a string value
-    default: '#000000' // Default color if not provided
+<script lang="ts">
+export default {
+  props: {
+    size: {
+      type: [Number, String], // Accepts a number or a string value
+      default: 18 // Default size if not provided
+    },
+    color: {
+      type: String, // Accepts a string value
+      default: '#000000' // Default color if not provided
+    }
   }
-})
+}
+// Props declaration
 </script>

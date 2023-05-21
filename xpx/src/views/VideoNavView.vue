@@ -16,7 +16,7 @@ export default {
   components: { LoadingOverlay },
   data() {
     return {
-      videoSource: '/src/assets/videos/demo_9x16.mp4',
+      videoSource: '/src/assets/videos/xpx_nav.mp4',
       loaded: false,
       loadingVideo: false
     }
@@ -62,9 +62,6 @@ export default {
   -webkit-animation: opa 0.3s ease-out forwards;
 }
 .header {
-  // position: fixed;
-  // top: 0;
-  // left: 0;
   padding: 24px;
   min-height: 72px;
   background: #232323;

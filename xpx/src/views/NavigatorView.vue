@@ -45,12 +45,14 @@
 
       <div class="new_and_popular_container">
         <div class="popular_item">
-          <div class="pupular_item_card">
+          <div class="popular_item_card">
             <p>Toegepaste psychologie.</p>
           </div>
         </div>
         <div class="popular_item">
-          <p>Digitale Vormgeving</p>
+          <div class="popular_item_card">
+            <p>Digitale Vormgeving.</p>
+          </div>
         </div>
         <div class="popular_item"></div>
       </div>
@@ -252,7 +254,7 @@ export default {
   border-radius: 8px;
 }
 
-.pupular_item_card {
+.popular_item_card {
   width: 100%;
   display: flex;
   align-items: flex-start;
@@ -264,7 +266,7 @@ export default {
   padding: 8px;
   border-radius: 4px;
 }
-.pupular_item_card p {
+.popular_item_card p {
   color: #232323;
   line-height: 18px;
   font-size: 15px;
