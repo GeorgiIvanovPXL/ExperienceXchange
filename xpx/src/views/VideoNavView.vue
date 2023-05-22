@@ -4,18 +4,19 @@
       <p>Navigating to Digital Village</p>
       <div id="nav_circle"></div>
     </div>
-    <LoadingOverlay v-if="loaded" />
+    <LoadingOverlay v-if="!loaded" />
     <video id="video" ref="video" :src="videoSource" @ended="videoEnded" type="video/mp4"></video>
   </div>
 </template>
 
 <script lang="ts">
-import LoadingOverlay from '@/components/LoadingOverlay.vue'
+import LoadingOverlay from '../components/LoadingOverlay.vue'
 
 export default {
+  components: { LoadingOverlay },
   data() {
     return {
-      videoSource: '/src/assets/videos/demo_9x16.mp4',
+      videoSource: '/src/assets/videos/xpx_nav.mp4',
       loaded: false,
       loadingVideo: false
     }
@@ -33,16 +34,15 @@ export default {
       this.loaded = true
       setTimeout(() => {
         const video = document.getElementById('video')
+        video?.classList.add('show')
         video?.play()
       }, 200)
     },
     videoEnded() {
-      alert('Hoera, je bent er!')
+      // alert('Hoera, je bent er!')
       this.$router.push('/main/arrived')
     }
-  },
-
-  components: { LoadingOverlay }
+  }
 }
 </script>
 
@@ -57,10 +57,11 @@ export default {
   flex-direction: column;
   align-items: center;
 }
+.show {
+  animation: opa 0.3s ease-out forwards;
+  -webkit-animation: opa 0.3s ease-out forwards;
+}
 .header {
-  // position: fixed;
-  // top: 0;
-  // left: 0;
   padding: 24px;
   min-height: 72px;
   background: #232323;
@@ -95,6 +96,7 @@ export default {
 #video {
   background-color: #232323;
   width: auto;
+  opacity: 0;
   height: calc(100vh - 72px);
   min-height: calc(100dvh - 72px);
   min-height: calc(100vh - 72px);
@@ -118,6 +120,15 @@ export default {
     opacity: 0;
     width: 32px;
     height: 32px;
+  }
+}
+
+@keyframes opa {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 </style>

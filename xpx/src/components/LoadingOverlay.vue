@@ -5,7 +5,13 @@
   </div>
 </template>
 
-<script></script>
+<script lang="ts">
+export default {
+  data() {
+    return {}
+  }
+}
+</script>
 
 <style>
 .loading-overlay {
@@ -23,10 +29,23 @@
 }
 
 .loader {
-  border: 16px solid #f1f1f1;
-  border-top: 16px solid #d1ff31;
+  border: 3px solid #232323;
+  border-top: 3px solid #d1ff31;
+  border-left: 3px solid #d1ff31;
   border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  animation: spin 1.6s linear infinite;
 
   /* Add styles for your loading spinner or animation */
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 </style>

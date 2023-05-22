@@ -21,7 +21,7 @@ export default {
   methods: {
     redirect() {
       setTimeout(() => {
-        this.$router.push('/main/demo')
+        this.$router.push('/demo')
       }, 300)
     }
   }

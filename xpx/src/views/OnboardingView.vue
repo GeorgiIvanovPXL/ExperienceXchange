@@ -9,25 +9,30 @@
         <h1>XPX</h1>
       </div>
       <p class="para">Ontdek de vernieuwde PXL-info experience.</p>
-      <div class="btn_tertiary">
-        <a href="/login">Ga verder</a>
+      <div @click="redirect_to_login" class="btn_tertiary">
+        <p>Ga verder</p>
         <div id="icon"><IconChevronRight size="32" color="#d1ff31" /></div>
       </div>
     </div>
   </div>
 </template>
 
-<script setup lang="ts">
-import { defineComponent } from 'vue'
-
-import { useRouter } from 'vue-router'
+<script lang="ts">
 import BgArtOnboarding from '../components/BgArtOnboarding.vue'
 import IconChevronRight from '../components/icons/IconChevronRight.vue'
-const router = useRouter()
 
-const handleSubmit = (event: Event) => {
-  event.preventDefault() // Prevent default form submission
-  router.push('/main/navigator')
+export default {
+  components: {
+    BgArtOnboarding,
+    IconChevronRight
+  },
+  methods: {
+    redirect_to_login() {
+      setTimeout(() => {
+        this.$router.push('/login')
+      }, 300)
+    }
+  }
 }
 </script>
 
@@ -87,6 +92,10 @@ const handleSubmit = (event: Event) => {
   display: flex;
   align-items: center;
   position: relative;
+  transition: 0.3s ease-out;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
   #icon {
     margin: 0;
     padding: 0;
@@ -94,7 +103,7 @@ const handleSubmit = (event: Event) => {
     align-items: center;
     justify-content: center;
   }
-  a {
+  p {
     background: transparent;
     color: #d1ff31;
 
@@ -103,14 +112,17 @@ const handleSubmit = (event: Event) => {
     z-index: 0;
     font-size: 24px;
   }
-}
 
-.btn_tertiary:active,
-.btn_tertiary:hover {
-  cursor: pointer;
-  #icon {
-    transition: 0.4s ease-out;
-    transform: (translateX(10px));
+  &:hover {
+    cursor: pointer;
+  }
+  &:active {
+    transition: 0.3s ease-out;
+    opacity: 0.4;
+    // #icon {
+    //   transition: 0.4s ease-out;
+    //   transform: (translateX(10px));
+    // }
   }
 }
 </style>

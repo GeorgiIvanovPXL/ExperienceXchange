@@ -1,6 +1,9 @@
 <template>
   <div class="main">
-    <h1>{{ name }} is Speeddating.</h1>
+    <h1>
+      Speeddating. <br />
+      coming soon!
+    </h1>
   </div>
 </template>
 

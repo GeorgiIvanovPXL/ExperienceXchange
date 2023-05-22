@@ -10,6 +10,7 @@ import SpeedDatingVue from '../views/SpeedDating.vue'
 import PreDemo from '@/views/PreDemoView.vue'
 import Demo from '@/views/DemoView.vue'
 import ArArrived from '../views/ArArrivedView.vue'
+import ReviewView from '../views/ReviewView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -31,6 +32,11 @@ const router = createRouter({
       component: VideoNav
     },
     {
+      path: '/demo',
+      name: 'demo',
+      component: Demo
+    },
+    {
       path: '/main',
       component: MainApp,
       children: [
@@ -44,6 +50,11 @@ const router = createRouter({
           name: 'ar-nav',
           component: ArNav
         },
+        {
+          path: 'review',
+          name: 'review',
+          component: ReviewView
+        },
 
         {
           path: 'arrived',
@@ -55,11 +66,7 @@ const router = createRouter({
           name: 'pre-demo',
           component: PreDemo
         },
-        {
-          path: 'demo',
-          name: 'demo',
-          component: Demo
-        },
+
         {
           path: 'speeddating',
           name: 'speeddating',

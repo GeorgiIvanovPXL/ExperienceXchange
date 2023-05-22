@@ -1,11 +1,8 @@
-<script setup lang="ts">
-import IconChevronLeft from '@/components/icons/IconChevronLeft.vue'
-</script>
 <template>
   <div class="main">
-    <div class="btn_tertiary">
+    <div @click="redirect_back" class="btn_tertiary">
       <IconChevronLeft size="20" color="#d1ff31" />
-      <a href="/main/ar">Terug naar het overzicht</a>
+      <p>Terug naar het overzicht</p>
     </div>
     <div class="main_content">
       <h2>Ga naar Digital Village om de AR ervaring te starten.</h2>
@@ -18,7 +15,11 @@ import IconChevronLeft from '@/components/icons/IconChevronLeft.vue'
 </template>
 
 <script lang="ts">
+import IconChevronLeft from '../components/icons/IconChevronLeft.vue'
 export default {
+  components: {
+    IconChevronLeft
+  },
   data() {
     return {
       name: 'Peter'
@@ -28,6 +29,11 @@ export default {
     redirect() {
       setTimeout(() => {
         this.$router.push('/video-nav')
+      }, 300)
+    },
+    redirect_back() {
+      setTimeout(() => {
+        this.$router.push('/main/ar')
       }, 300)
     }
   }
@@ -72,14 +78,20 @@ export default {
   display: flex;
   gap: 8px;
   align-items: center;
-  a {
+  p {
     background: transparent;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
     color: #d1ff31;
     margin: 0;
     padding: 0;
     text-decoration: underline;
     text-underline-offset: 4px;
     font-size: 16px;
+  }
+  &:active {
+    opacity: 0.56;
   }
 }
 
@@ -99,7 +111,9 @@ export default {
   align-items: center;
   justify-content: center;
   text-align: center;
-
+  &:hover {
+    cursor: pointer;
+  }
   &:active {
     background: #d2ff31d5;
     transition: 0.3s ease-out;

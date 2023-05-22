@@ -1,9 +1,3 @@
-<script setup lang="ts">
-import IconBusiness from '@/components/icons/IconBusiness.vue'
-import IconHealthcare from '@/components/icons/IconHealthcare.vue'
-import IconMusic from '@/components/icons/IconMusic.vue'
-import IconDigital from '@/components/icons/IconDigital.vue'
-</script>
 <template>
   <div class="main">
     <div class="heading">
@@ -36,7 +30,17 @@ import IconDigital from '@/components/icons/IconDigital.vue'
 </template>
 
 <script lang="ts">
+import IconBusiness from '../components/icons/IconBusiness.vue'
+import IconHealthcare from '../components/icons/IconHealthcare.vue'
+import IconMusic from '../components/icons/IconMusic.vue'
+import IconDigital from '../components/icons/IconDigital.vue'
 export default {
+  components: {
+    IconBusiness,
+    IconHealthcare,
+    IconMusic,
+    IconDigital
+  },
   data() {
     return {}
   },
@@ -147,7 +151,9 @@ export default {
   align-items: center;
   justify-content: center;
   padding: 8px;
-
+  &:hover {
+    cursor: pointer;
+  }
   &:active {
     transition: 0.3s ease-out;
     transform: scale(0.8);
