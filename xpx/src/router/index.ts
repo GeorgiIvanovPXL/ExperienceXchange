@@ -11,6 +11,7 @@ import PreDemo from '@/views/PreDemoView.vue'
 import Demo from '@/views/DemoView.vue'
 import ArArrived from '../views/ArArrivedView.vue'
 import ReviewView from '../views/ReviewView.vue'
+import ReviewLastView from '../views/ReviewLastView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -54,6 +55,12 @@ const router = createRouter({
           path: 'review',
           name: 'review',
           component: ReviewView
+        },
+
+        {
+          path: 'review_last',
+          name: 'review_last',
+          component: ReviewLastView
         },
 
         {
