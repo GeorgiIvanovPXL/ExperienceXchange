@@ -163,4 +163,12 @@ export default {
   line-height: 24px;
   font-size: 15px;
 }
+
+.categories .category_item svg {
+  transition: 0.3s ease
+}
+
+.categories .category_item:hover svg {
+  transform: scale(1.3);
+}
 </style>

@@ -54,7 +54,11 @@
             <p>Digitale Vormgeving.</p>
           </div>
         </div>
-        <div class="popular_item"></div>
+        <div class="popular_item">
+          <div class="popular_item_card">
+            <p>Toegepaste informatica.</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -147,6 +151,15 @@ export default {
   align-items: center;
   justify-content: space-between;
 }
+
+.search_input svg {
+  transition: 1s ease;
+}
+
+.search_input:hover svg {
+  transform: rotate(-20deg);
+}
+
 .search_input input {
   width: 90%;
   background: transparent;
@@ -186,6 +199,14 @@ export default {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+}
+
+.categories .category_item svg {
+  transition: 0.3s ease
+}
+
+.categories .category_item:hover svg {
+  transform: scale(1.3);
 }
 
 .categories .category_name {
@@ -265,7 +286,13 @@ export default {
   margin: 8px;
   padding: 8px;
   border-radius: 4px;
+  transition: 0.3s ease;
 }
+
+.popular_item:hover .popular_item_card {
+  margin-bottom: 20px;
+}
+
 .popular_item_card p {
   color: #232323;
   line-height: 18px;

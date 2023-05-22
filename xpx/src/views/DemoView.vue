@@ -11,6 +11,7 @@
       :src="videoSource"
       @ended="videoEnded"
       type="video/mp4"
+      muted
     ></video>
   </div>
 </template>

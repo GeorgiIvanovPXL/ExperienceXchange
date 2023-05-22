@@ -2,7 +2,7 @@
   <div class="main">
     <div @click="redirect_back" class="btn_tertiary">
       <IconChevronLeft size="20" color="#d1ff31" />
-      <p>Terug naar het overzicht</p>
+      <p class="nav_goback">Terug naar het overzicht</p>
     </div>
     <div class="main_content">
       <h2>Ga naar Digital Village om de AR ervaring te starten.</h2>
@@ -89,6 +89,9 @@ export default {
     text-decoration: underline;
     text-underline-offset: 4px;
     font-size: 16px;
+  }
+  &:hover {
+    cursor: pointer;
   }
   &:active {
     opacity: 0.56;

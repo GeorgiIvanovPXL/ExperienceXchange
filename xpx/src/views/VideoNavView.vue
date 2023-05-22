@@ -5,7 +5,7 @@
       <div id="nav_circle"></div>
     </div>
     <LoadingOverlay v-if="!loaded" />
-    <video id="video" ref="video" :src="videoSource" @ended="videoEnded" type="video/mp4"></video>
+    <video id="video" ref="video" :src="videoSource" @ended="videoEnded" type="video/mp4" muted></video>
   </div>
 </template>
 
